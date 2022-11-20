@@ -12,6 +12,7 @@ import com.amazonaws.services.dynamodbv2.document.QueryOutcome;
 import java.util.Iterator;
 
 // The ReservationsStatistics class queries the reservations table and reports the total number of reservations in a city.
+// Run this class third to query the table
 public class ReservationsStatistics {
 
     // City for which number of reservations must be queried

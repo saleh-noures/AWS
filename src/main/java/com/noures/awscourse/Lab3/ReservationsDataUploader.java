@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 // The reservationsDataUploader class reads reservations data from a file and uploads each item to the reservations table.
+// Run this class second to upload the data into the table
 public class ReservationsDataUploader {
 
     public static final String RESERVATIONS_TABLE_NAME = ReservationsTableCreator.RESERVATIONS_TABLE_NAME;

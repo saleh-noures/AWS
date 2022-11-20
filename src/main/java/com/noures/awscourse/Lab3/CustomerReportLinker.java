@@ -6,6 +6,7 @@ import com.amazonaws.services.dynamodbv2.document.DynamoDB;
 import com.amazonaws.services.dynamodbv2.document.UpdateItemOutcome;
 
 // The CustomerReportLinker class updates DynamoDB items with the corresponding link to a customer's report on S3.
+// Run this class fourth to update the table
 public class CustomerReportLinker {
 
     public static final String RESERVATIONS_TABLE_NAME = ReservationsTableCreator.RESERVATIONS_TABLE_NAME;

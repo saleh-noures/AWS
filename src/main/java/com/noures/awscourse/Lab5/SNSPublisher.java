@@ -1,6 +1,7 @@
 package com.noures.awscourse.Lab5;
 
 
+
 import com.amazonaws.services.sns.AmazonSNSClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,10 +10,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class SNSPublisher {
 
     // TODO 1: Set ARN for SNS topic for email messages
-    private static final String TOPIC_ARN_EMAIL = "<Email-SNS-Topic-ARN>";
+    private static final String TOPIC_ARN_EMAIL = "arn:aws:sns:ap-southeast-2:904751860664:EmailSNSTopic";
 
     // TODO 2: Set ARN for SNS topic for order messages
-    private static final String TOPIC_ARN_ORDER = "<Order-SNS-Topic-ARN>";
+    private static final String TOPIC_ARN_ORDER = "arn:aws:sns:ap-southeast-2:904751860664:OrderSNSTopic";
 
     private static final String EMAIL_SUBJECT = "Status of pharmaceuticals order.";
     private static final String EMAIL_MESSAGE = "Your pharmaceutical supplies will be shipped 5 business days from the date of order.";

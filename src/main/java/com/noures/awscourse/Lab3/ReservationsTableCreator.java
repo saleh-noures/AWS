@@ -13,6 +13,7 @@ import java.util.ArrayList;
 
 // The ReservationsTableCreator class creates a table and global secondary index to store data about reservations
 // This sample uses the DynamoDB document API
+// Run this class first to create the table
 public class ReservationsTableCreator {
 
     public static final String RESERVATIONS_TABLE_NAME = "Reservations";
@@ -79,6 +80,7 @@ public class ReservationsTableCreator {
         // Create global secondary index object
         // The code uses fluent setter methods to initialize the GlobalSecondaryIndex
         // object
+        // Remember, creating GSI will create a new table for the original one with the new index. No wonder it is expensive!
         GlobalSecondaryIndex gsi = new GlobalSecondaryIndex().withIndexName(CITY_DATE_INDEX_NAME)
                 .withKeySchema(new KeySchemaElement("City", KeyType.HASH), new KeySchemaElement("Date", KeyType.RANGE))
                 .withProvisionedThroughput(new ProvisionedThroughput(5L, 5L))

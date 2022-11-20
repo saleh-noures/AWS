@@ -19,6 +19,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// To deploy use this command:
+// aws lambda update-function-code --function-name JavaCalculator --zip-file fileb://AWSCourse-0.0.1.jar --cli-connect-timeout 6000
+
 public class Calculator implements RequestHandler<S3Event, String> {
 
     private AmazonS3 s3 = AmazonS3ClientBuilder.standard().build();

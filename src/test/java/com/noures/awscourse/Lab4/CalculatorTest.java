@@ -17,8 +17,8 @@ public class CalculatorTest {
     @Test
     public void testCalculator() throws IOException {
 
-        // Parse the src/test/resources/s3-event.put.json JSON file into an S3Event object
-        File initialFile = new File("src/test/resources/s3-event.put.json");
+        // Parse the src/test/resources/Lab4/s3-event.put.json JSON file into an S3Event object
+        File initialFile = new File("src/test/resources/Lab4/s3-event.put.json");
         InputStream stream = new FileInputStream(initialFile);
         String json = IOUtils.toString(stream);
         S3EventNotification eventNotification = S3EventNotification.parseJson(json);

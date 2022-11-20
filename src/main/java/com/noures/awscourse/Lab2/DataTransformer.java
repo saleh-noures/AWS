@@ -22,10 +22,10 @@ import java.util.Scanner;
 public class DataTransformer {
 
     // TODO 1: Set input bucket name (must be globally unique)
-    public static final String INPUT_BUCKET_NAME = "salehsestsnputsucket";
+    public static final String INPUT_BUCKET_NAME = "salehinputsucket";
 
     // TODO 2: Set output bucket name (must be globally unique)
-    public static final String OUTPUT_BUCKET_NAME = "salehsestoutputbucket";
+    public static final String OUTPUT_BUCKET_NAME = "salehoutputbucket";
 
     // The Amazon S3 client allows you to manage buckets and objects
     // programmatically
@@ -76,7 +76,8 @@ public class DataTransformer {
                         transformedFile = transformText(s3Object);
 
                         // TODO 7: Switch to enhanced file upload
-                        putObjectBasic(OUTPUT_BUCKET_NAME, fileKey, transformedFile);
+                        //putObjectBasic(OUTPUT_BUCKET_NAME, fileKey, transformedFile);
+                        putObjectEnhanced(OUTPUT_BUCKET_NAME, fileKey, transformedFile);
                         // response = putObjectEnhanced(OUTPUT_BUCKET_NAME, fileKey, transformedFile);
 
                         if (response != null) {
@@ -168,8 +169,6 @@ public class DataTransformer {
     /**
      * Return a S3 Client
      *
-     * @param bucketRegion
-     *            Region containing the buckets
      * @return The S3 Client
      */
     private static AmazonS3 createS3Client() {
