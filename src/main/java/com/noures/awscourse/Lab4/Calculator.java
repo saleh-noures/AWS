@@ -21,6 +21,11 @@ import java.util.regex.Pattern;
 
 // To deploy use this command:
 // aws lambda update-function-code --function-name JavaCalculator --zip-file fileb://AWSCourse-0.0.1.jar --cli-connect-timeout 6000
+// To test in the IDE --> run the junit test
+
+// In the management console --> Lambda --> Configuration --> General Configuration --> choose Edit.
+// then In the window that appears, enter the following: Description: aws:states:opt-out
+// If this is not added, you will receive the following error when you try to update the function in later steps.
 
 public class Calculator implements RequestHandler<S3Event, String> {
 
@@ -33,6 +38,8 @@ public class Calculator implements RequestHandler<S3Event, String> {
         String result = "No numbers found in file";
 
         // Get the object from the event and show its content type
+        // have a look at src/test/resources/Lab4/s3-event.put.json if you test from the IDE
+        // or if you test from the management console, have a look at Lambda --> JavaCalculator --> "Test" Tab --> Event JSON
         String bucket = event.getRecords().get(0).getS3().getBucket().getName();
         String key = event.getRecords().get(0).getS3().getObject().getKey();
         context.getLogger().log(String.format("New event: bucket %s, object %s", bucket, key));
